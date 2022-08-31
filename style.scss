@@ -32,13 +32,9 @@ $box-shadow:0 .5rem 1rem rgba(0,0,0,.1);
 
 @mixin graph-text($graphSize){
     font-size: $graphSize;
-    text-transform: capitalize;
-    color: $black;
-}
-@mixin graph-text($graphSize){
-    font-size: $graphSize;
     line-height: 2;
-    color: $light-color;
+    color:$light-color;
+    margin-bottom: 0;
 }
 
 html{
@@ -59,14 +55,42 @@ html{
 
     }
 }
+@keyframes fadeIn{
+    0%{
+        transform:translateY(-2rem);
+        opacity: 0;
+    }
+}
+
+
 section{
     padding:5rem 1rem;
 }
 
+.link-btn{
+    margin-top: 1rem;
+    padding: 1rem 3rem;
+    display: inline-block;
+    border: $border;
+    color: $main-color;
+    background: none;
+    cursor: pointer;
+    font-size: 1.7rem;
+
+    &:hover{
+        background: $main-color;
+        color: $white;
+    }
+}
+
 .header{
-    font-size: 2.5rem;
-    color: $white;
-    font-weight:bolder;
+    z-index: 1000;
+    padding: 4rem 0;
+
+    .header.active{
+        padding: 0.2rem 0;
+        background: $main-color;
+    }
 
     .logo{
         font-size: 2.5rem;
@@ -107,21 +131,88 @@ section{
     height: 100%;
     width: 100%;
     background: rgba(0,0,0,.8);
-    display: flex;
+    display: none;
     align-items: center;
     justify-content: center;
     padding:2rem; 
+
+    &.active{
+        display: flex;
+    }
 
     form{
         width:50rem;
         padding: 4rem;
         background: $white;
         text-align: center;
+        position: relative;
+        animation: fadeIn .2s linear;
+
+        #close-login-form{
+            position:absolute;
+            top: -4rem; right:0;
+            font-size: 3rem;
+            cursor: pointer;
+            color: $white;
+
+            &:hover{
+                transform: rotate(90deg);
+            }
+        }
 
         .logo{
             font-size: 2.5rem;
             color: $main-color;
             font-weight: bolder;
+        }
+        h3{
+            padding: 1rem 0;
+            @include title-text(2rem);
+            margin-top: 1rem;
+        }
+
+        .box{
+            width: 100%;
+            padding:1.2rem 1.4rem; 
+            border: $border;
+            font-size:1.6rem;
+            margin: 1rem 0;
+        }
+        .flex{
+            display: flex;align-items: center;
+            gap: .5rem;
+            margin-bottom: 1rem;
+
+            label{
+                @include graph-text(1.5rem);
+                cursor: pointer;
+            }
+            a{
+                font-size:1.5rem;
+                color:$main-color;
+                margin-left:auto;
+
+                &:hover{
+                    text-decoration: underline !important; 
+                }
+            }
+        }
+        .link-btn{
+            width: 100%;
+            margin: 1rem 0;
+        }
+        .account{
+            padding: .5rem;
+            background: $light-bg;
+            @include graph-text(1.5rem);
+
+            a{
+                color: $main-color;
+
+                &:hover{
+                    text-decoration: underline !important;
+                }
+            }
         }
     }
 }
@@ -133,3 +224,58 @@ section{
 
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media(max-width:991px){
+    html{
+        font-size: 55%;
+        scroll-padding: 8rem;
+    }
+}
+
+@media(max-width:768px){
+    .header{
+        padding: 4rem 2rem;
+
+        &.active{
+            padding: 2rem;
+        }
+        #menu-btn{
+            display: inline-block;
+        }
+    }
+}
+
+@media(max-width:450px){
+    html{
+        font-size: 55%;
+    }
+}
