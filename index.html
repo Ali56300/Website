@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.1/css/bootstrap.min.css">
 
     <!--custom css file link-->
-    <link rel="stylesheet" href="style.css"> 
+    <link rel="stylesheet" href="style.scss"> 
 
 </head>
 <body>
@@ -41,12 +41,36 @@
             </div>
         </div>
     </header>
+    <!--login form starts-->
 
-<!-- header section ends-->
+    <div class="login-form">
+        <form action="">
+            <a href="#" class="logo mr-auto"> <i class="fas fa-mug-hot"></i>coffee</a>
+            <h3>Hey good looking lets start this day off with a coffee</h3>
+            <input type="email" name="" placeholder="Please enter an email address" id="" class="box">
+            <input type="password" name="" placeholder="Please enter a valid pasword" id="" class="box">
+            <div class="flex">
+                <input type="checkbox" name="" id="remember-me">
+                <label for="remember-me">remember me</label>
+                <a href="#">forgot password?</a>
+            </div>
+            <input type="submit" value="login now" class="link-btn">
+            <p>dont have an account? <a href="#">create an account</a></p>
+        </form>
+
+    </div>
+
+
+
+
+    <!--login for ends-->
+
+
+    <!-- header section ends-->
     <!--home section starts here-->
     <section class="home" id="home">
         <div class="container">
-            <div class="row-min-vh-100">
+            <div class="row min-vh-100">
                 
             </div>
         </div>
@@ -62,7 +86,7 @@
 
 
 
-<!--custom js file link-->
+    <!--custom js file link-->
 <script src="js/script.js">
 
 </script>
