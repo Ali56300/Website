@@ -95,7 +95,7 @@ section{
     .logo{
         font-size: 2.5rem;
         color: $white;
-        font-weight: bolder
+        font-weight: bolder;
     }
 
     .nav{
@@ -222,6 +222,22 @@ section{
     background-size: cover;
     background-position: center;
 
+
+    span{
+        font-size: 2.5rem;
+        color:$white;
+    }
+
+    h3{
+        padding: 1rem 0;
+        font-size: 5.5rem;
+        color: $white;
+    }
+
+    .link-btn{
+        color: $white;
+        border-color: $white;
+    }
 }
 
 
@@ -262,6 +278,15 @@ section{
 }
 
 @media(max-width:768px){
+
+    .login-form form{
+        padding: 3rem 2rem;
+
+        h3{
+            font-size:1.7rem;
+        }
+    }
+
     .header{
         padding: 4rem 2rem;
 
@@ -270,6 +295,28 @@ section{
         }
         #menu-btn{
             display: inline-block;
+
+            &.fa-times{
+                transform: rotate(180deg);
+            }
+        }
+        .nav{
+            position: absolute;
+            top: 99%; left: 0; right: 0;
+            background: $white;
+            flex-flow: column;
+            clip-path: polygon(0 0, 100% 0, 100%, 0 0);
+
+            &.active{
+                clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+
+            }
+
+
+            a{
+                margin: 1rem 2rem;
+                color: $black;
+            }
         }
     }
 }
