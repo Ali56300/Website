@@ -218,7 +218,7 @@ section{
 }
 
 .home{
-    background: url(images/home-bg.jpg) no-repeat center;
+    background: linear-gradient(rgba(0,0,0,.7),rgba(0,0,0,.7)), url(images/home-bg.jpg) no-repeat center;
     background-size: cover;
     background-position: center;
 
@@ -230,7 +230,7 @@ section{
 
     h3{
         padding: 1rem 0;
-        font-size: 5.5rem;
+        font-size: 6 rem;
         color: $white;
     }
 
@@ -274,6 +274,14 @@ section{
     html{
         font-size: 55%;
         scroll-padding: 8rem;
+    }
+
+    .home h3{
+        font-size: 4rem;
+    }
+
+    section{
+        padding: 3rem 0;
     }
 }
 
